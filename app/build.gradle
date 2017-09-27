@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+	compileSdkVersion compileAndTargetSdk
+	buildToolsVersion "26.0.2"
+	defaultConfig {
+		applicationId "com.example.invites"
+		minSdkVersion 26
+		targetSdkVersion compileAndTargetSdk
+		versionCode 1
+		versionName "1.0"
+		resConfigs('en', 'xxxhdpi')
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+		debug {
+			splits.abi.enable = false
+			splits.density.enable = false
+			aaptOptions.cruncherEnabled = false
+		}
+	}
+
+	dexOptions {
+		preDexLibraries true
+		maxProcessCount 8
+	}
+}
+
+dependencies {
+	implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+	implementation "com.google.firebase:firebase-invites:$firebaseLibraryVersion"
+	implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}
+
+
+apply plugin: 'com.google.gms.google-services'
