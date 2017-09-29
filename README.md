@@ -15,7 +15,7 @@ Firebase Invites code guideline for Android developers
 ## Screenshots
 <table width="100%">
 	<tr>
-	  <th><img src="https://user-images.githubusercontent.com/1763410/31031719-a887c692-a583-11e7-9f08-aa57a9d38035.png" width="33%"></th>
+	  <th><img src="https://user-images.githubusercontent.com/1763410/31031719-a887c692-a583-11e7-9f08-aa57a9d38035.png" width="100%"></th>
 	</tr>
 </table>
 
