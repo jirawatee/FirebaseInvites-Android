@@ -39,22 +39,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 							return;
 						}
 
-						// Get the deep link
-						Uri deepLink = data.getLink();
-
 						// Extract invite
 						FirebaseAppInvite invite = FirebaseAppInvite.getInvitation(data);
 						if (invite != null) {
 							String invitationId = invite.getInvitationId();
+							Log.d(TAG, "invitationId:" + invitationId);
 						}
 
-						// Handle the deep link
+						// Get and handle the deep link
+						Uri deepLink = data.getLink();
 						Log.d(TAG, "deepLink:" + deepLink);
 						if (deepLink != null) {
 							Intent intent = new Intent(Intent.ACTION_VIEW);
 							intent.setPackage(getPackageName());
 							intent.setData(deepLink);
-
 							startActivity(intent);
 						}
 					}
@@ -96,8 +94,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
 				.setMessage(getString(R.string.invitation_message))
 				.setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
-				.setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
-				.setCallToActionText(getString(R.string.invitation_cta))
+				//.setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
+				//.setCallToActionText(getString(R.string.invitation_cta))
+				.setEmailHtmlContent("<a href='%%APPINVITE_LINK_PLACEHOLDER%%'><h1>" + getString(R.string.invitation_cta)+ "</h1></a>")
+				.setEmailSubject(getString(R.string.invitation_subject))
 				.build();
 		startActivityForResult(intent, REQUEST_INVITE);
 	}

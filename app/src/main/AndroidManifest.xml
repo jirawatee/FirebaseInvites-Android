@@ -18,9 +18,7 @@
 			</intent-filter>
 		</activity>
 
-		<activity
-			android:name=".DeepLinkActivity"
-			android:theme="@style/ThemeOverlay.MyDialogActivity">
+		<activity android:name=".DeepLinkActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW"/>
 
