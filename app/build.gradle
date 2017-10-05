@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-	compileSdkVersion compileAndTargetSdk
+	compileSdkVersion 26
 	buildToolsVersion "26.0.2"
 	defaultConfig {
 		applicationId "com.example.invites"
-		minSdkVersion 26
-		targetSdkVersion compileAndTargetSdk
+		minSdkVersion 22
+		targetSdkVersion 25
 		versionCode 1
 		versionName "1.0"
-		resConfigs('en', 'xxxhdpi')
+		resConfigs('en')
 	}
 
 	buildTypes {
@@ -33,7 +33,6 @@ android {
 dependencies {
 	implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
 	implementation "com.google.firebase:firebase-invites:$firebaseLibraryVersion"
-	implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
 
