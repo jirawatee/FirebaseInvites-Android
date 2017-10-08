@@ -3,14 +3,9 @@ Firebase Invites code guideline for Android developers
 
 ## Prerequisites
 * Supported Android 4.0.1 (Ice Cream Sandwich) or newer
-* Google Play services 11.4.0 or newer
+* Google Play services 11.4.2 or newer
 * Android Studio 2.3 or higher
 * google-services.json in app-level folder
-
-## Features
-* Set in-app default parameter values
-* Set parameter values to server-side
-* Get parameter values from server-side
 
 ## Screenshots
 <table width="100%">
