@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-	compileSdkVersion 26
-	buildToolsVersion "26.0.2"
+	compileSdkVersion compileAndTargetVersion
+	buildToolsVersion "27.0.3"
+
 	defaultConfig {
 		applicationId "com.example.invites"
-		minSdkVersion 26
-		targetSdkVersion 26
+		minSdkVersion compileAndTargetVersion
+		targetSdkVersion compileAndTargetVersion
 		versionCode 1
 		versionName "1.0"
 		resConfigs('en', 'xxxhdpi')
@@ -32,7 +33,9 @@ android {
 }
 
 dependencies {
-	implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+	implementation ("com.android.support:appcompat-v7:$supportLibraryVersion") {
+		force = true
+	}
 	implementation "com.google.firebase:firebase-invites:$firebaseLibraryVersion"
 }
 
